@@ -1,0 +1,29 @@
+{
+  "name": "dclc-cli",
+  "version": "1.0.2",
+  "description": "嘉数公司前端脚手架",
+  "main": "index.js",
+  "bin": {
+    "dclc": "./src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "js",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "inquirer": "^6.2.1",
+    "node-cmd": "^3.0.0",
+    "ora": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.11.1"
+  }
+}
