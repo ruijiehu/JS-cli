@@ -1,8 +1,8 @@
 const download = require('download');
 const chalk = require('chalk');
 const tempOptions = {
-  // '态势项目模板': 'state',
-  // '可视化后台模板': 'visual',
+  'vue2+elemui-pc': 'ghost',
+  '2dmap-visiual': 'datav-template',
   'vue3+vant-h5': 'mobile',
   // '小程序模板': 'miniapp',
   // '可视化组件模板': 'product'
