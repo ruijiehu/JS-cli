@@ -5,19 +5,20 @@ function reviseFile() {
   return new Promise((resolve, reject) => {
     let url = `${process.cwd()}/${this.commander.init}`;
     switch(this.answers.temp) {
-      case '可视化后台模板':
-        let configFiles = ['config.dev.js', 'config.local.js', 'config.runtime.js', 'src/pages/backstage/authority-admin.vue'];
-        let titleFiles = ['src/pages/backstage/app.vue', 'src/pages/backstage/index.html']
+      case '2dmap-visiual':
+        // let configFiles = ['config.dev.js', 'config.local.js', 'config.runtime.js', 'src/pages/backstage/authority-admin.vue'];
+        // let titleFiles = ['src/pages/backstage/app.vue', 'src/pages/backstage/index.html']
         revisePackage(url, this.visualAnswers);
-        reviseVisualConfigJS(url, this.visualAnswers.visualCon, configFiles);
-        reviseVisualConfigJS(url, this.visualAnswers.title, titleFiles);
+        reviseTitle(url, this.visualAnswers.title);
+        // reviseVisualConfigJS(url, this.visualAnswers.visualCon, configFiles);
+        // reviseVisualConfigJS(url, this.visualAnswers.title, titleFiles);
         resolve();
         break;
-      case '态势项目模板':
+      case 'vue2+elemui-pc':
         revisePackage(url, this.stateAnswers);
         reviseTitle(url, this.stateAnswers.title);
         // reviseConfig(url, this.stateAnswers);
-        reviseWidthAndHeight(url, this.stateAnswers);
+        // reviseWidthAndHeight(url, this.stateAnswers);
         resolve();
         break;
       case 'vue3+vant-h5':
