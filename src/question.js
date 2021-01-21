@@ -15,12 +15,12 @@ function question() {
       ]).then(answers => {
         // 选择项目模板
         this.answers.temp = answers.temp;
-        // if (this.answers.temp === '可视化后台模板') {
-        //   visualQuestion.call(this, resolve);
-        // } else if (this.answers.temp === '态势项目模板') {
-        //   stateQuestion.call(this, resolve);
-        // } else 
-        if (this.answers.temp === 'vue3+vant-h5') {
+        if (this.answers.temp === '2dmap-visiual') {
+          visualQuestion.call(this, resolve);
+        }
+         if (this.answers.temp === 'vue2+elemui-pc') {
+          stateQuestion.call(this, resolve);
+        } else if (this.answers.temp === 'vue3+vant-h5') {
           mobileQuestion.call(this, resolve);
         }
         //  else if (this.answers.temp === '小程序模板') {
@@ -40,12 +40,10 @@ function visualQuestion(resolve) {
   inquirer.prompt([
     questionList.proName,
     questionList.proDes,
-    questionList.visualCon,
     questionList.title
   ]).then(answers => {
     this.visualAnswers.proName = answers.proName;
     this.visualAnswers.proDes = answers.proDes;
-    this.visualAnswers.visualCon = answers.visualCon;
     this.visualAnswers.title = answers.title
     // 获取安装插件操作
     setParam.call(this);
@@ -58,18 +56,18 @@ function stateQuestion(resolve) {
     questionList.proName,
     questionList.proDes,
     questionList.title,
-    questionList.proxies,
-    questionList.path,
-    questionList.width,
-    questionList.height
+    // questionList.proxies,
+    // questionList.path,
+    // questionList.width,
+    // questionList.height
   ]).then(answers => {
     this.stateAnswers.proName = answers.proName;
     this.stateAnswers.proDes = answers.proDes;
     this.stateAnswers.title = answers.title;
-    this.stateAnswers.proxies = answers.proxies;
-    this.stateAnswers.path = answers.path;
-    this.stateAnswers.width = answers.width;
-    this.stateAnswers.height = answers.height;
+    // this.stateAnswers.proxies = answers.proxies;
+    // this.stateAnswers.path = answers.path;
+    // this.stateAnswers.width = answers.width;
+    // this.stateAnswers.height = answers.height;
     // 获取安装插件操作
     setParam.call(this);
     resolve();
